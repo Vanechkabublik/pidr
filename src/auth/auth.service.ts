@@ -8,7 +8,7 @@ export class AuthService extends PassportStrategy(Strategy, 'vk') {
         super({
             clientID: '52663091',              // твой ID приложения ВКонтакте
             clientSecret: '4jbm07n4c05AXETuUfXN',      // секрет твоего приложения
-            callbackURL: '/auth/vk/callback',                // обратный адрес
+            callbackURL: 'https://davalka0311.onrender.com/auth/vk/callback',                // обратный адрес
             scope: ['email'],                        // запрашиваем доступ к email
         });
     }
