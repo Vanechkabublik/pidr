@@ -14,7 +14,14 @@ export class AuthService extends PassportStrategy(Strategy, 'vk') {
     }
 
     async validate(accessToken, refreshToken, profile, done) {
-        done(null, profile);
-        return profile;
+        try {
+            return {
+                profile,
+            }
+
+            done(null, profile);
+        } catch (error) {
+            done(error, false);
+        }
     }
 }
